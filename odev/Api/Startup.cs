@@ -1,8 +1,12 @@
+using Api.Mapping;
+using AutoMapper;
 using Business.Abstract;
 using Business.Concrete;
 using Core.Abstract;
 using Core.Concrete;
+using Core.UnitOfWork;
 using Data.Context;
+using Data.IUnitOfWork;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -52,7 +56,12 @@ namespace Api
             });
 
             services.AddDbContext<AppDbContext>();
-           
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new MapProfile());
+            });
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
 
             services.AddMvc();
             services.AddControllers();
@@ -66,6 +75,7 @@ namespace Api
             services.AddScoped<IContainerService, ContainerService>();
             services.AddScoped<IInformationService, InformationService>();
             services.AddScoped<IVehicleService, VehicleService>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
             #endregion
         }
 

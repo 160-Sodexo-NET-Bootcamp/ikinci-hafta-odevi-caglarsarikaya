@@ -52,6 +52,13 @@ namespace Core.Concrete
             _dbSet.Remove(entity);
         }
 
+        public void RemoveById(int id)
+        {
+            var entity = _dbSet.Find(id);
+            if(entity is not null)
+            Remove(entity);
+        }
+
         public void RemoveRange(IEnumerable<T> entities)
         {
             _dbSet.RemoveRange(entities);

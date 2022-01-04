@@ -14,3 +14,4 @@ C:\Users\pc\Documents\GitHub\ikinci-hafta-odevi-caglarsarikaya\odev\Business\bin
 C:\Users\pc\Documents\GitHub\ikinci-hafta-odevi-caglarsarikaya\odev\Business\bin\Debug\net5.0\Core.pdb
 C:\Users\pc\Documents\GitHub\ikinci-hafta-odevi-caglarsarikaya\odev\Business\bin\Debug\net5.0\Data.pdb
 C:\Users\pc\Documents\GitHub\ikinci-hafta-odevi-caglarsarikaya\odev\Business\obj\Debug\net5.0\Business.csproj.CopyComplete
+C:\Users\pc\Documents\GitHub\ikinci-hafta-odevi-caglarsarikaya\odev\Business\obj\Debug\net5.0\Business.csproj.AssemblyReference.cache

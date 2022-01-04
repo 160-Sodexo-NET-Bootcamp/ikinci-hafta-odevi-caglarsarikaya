@@ -16,6 +16,7 @@ namespace Core.Abstract
         Task AddAsync(T entity);
         Task AddRangeAsync(IEnumerable<T> entities);
         void Remove(T entity);
+        void RemoveById(int id);
         void RemoveRange(IEnumerable<T> entities);
         T Update(T entity);
 

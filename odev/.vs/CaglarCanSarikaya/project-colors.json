@@ -25,7 +25,12 @@
       "ProjectGuid": "dcf4679e-8010-4948-8871-9a8fa72fc872",
       "DisplayName": "Api",
       "ColorIndex": 3
+    },
+    "d29a6ef1-7d85-44b4-a417-fa9f6d328a57": {
+      "ProjectGuid": "d29a6ef1-7d85-44b4-a417-fa9f6d328a57",
+      "DisplayName": "Business",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 5
 }

@@ -10,5 +10,7 @@ namespace Business.Abstract
     public interface IInformationService
     {
         Task<List<Container>> GetVehicleRoute(int id);
+
+        List<ContainerCluster> CreateClusters();
     }
 }

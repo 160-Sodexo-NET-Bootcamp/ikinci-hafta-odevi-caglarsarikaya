@@ -18,10 +18,16 @@ namespace Api.Controllers
             _informationService = informationService;
         }
 
-        [HttpGet]
+        [HttpGet("GetVehicleRoute")]
         public Task<List<Container>> GetVehicleRoute(int Id)
         {
            return  _informationService.GetVehicleRoute(Id);
+        }
+
+        [HttpGet("GetClusters")]
+        public List<ContainerCluster> GetClusters()
+        {
+            return _informationService.CreateClusters();
         }
 
 

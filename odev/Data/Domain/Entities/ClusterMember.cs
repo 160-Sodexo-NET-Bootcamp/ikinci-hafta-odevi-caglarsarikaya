@@ -8,7 +8,7 @@ namespace Data.Domain.Entities
 {
     public class ClusterMember
     {
-        public Cluster Cluster { get; set; }
+        public ContainerCluster Cluster { get; set; }
         public int ClusterId { get; set; }
 
         public Container Container { get; set; }

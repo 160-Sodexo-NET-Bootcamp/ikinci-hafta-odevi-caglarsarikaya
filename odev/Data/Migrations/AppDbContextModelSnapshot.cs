@@ -19,26 +19,6 @@ namespace Data.Migrations
                 .HasAnnotation("ProductVersion", "5.0.13")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Data.Domain.Entities.Cluster", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
-                        .HasAnnotation("SqlServer:IdentitySeed", 1)
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("LocationX")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LocationY")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Cluster");
-                });
-
             modelBuilder.Entity("Data.Domain.Entities.Container", b =>
                 {
                     b.Property<int>("Id")
@@ -48,11 +28,11 @@ namespace Data.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("LocationX")
-                        .HasColumnType("int");
+                    b.Property<double>("LocationX")
+                        .HasColumnType("float");
 
-                    b.Property<int>("LocationY")
-                        .HasColumnType("int");
+                    b.Property<double>("LocationY")
+                        .HasColumnType("float");
 
                     b.Property<int?>("VehicleId")
                         .HasColumnType("int");
@@ -64,6 +44,32 @@ namespace Data.Migrations
                     b.ToTable("Container");
                 });
 
+            modelBuilder.Entity("Data.Domain.Entities.ContainerCluster", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ContainerId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("GroupId")
+                        .HasColumnType("int");
+
+                    b.Property<double>("LocationX")
+                        .HasColumnType("float");
+
+                    b.Property<double>("LocationY")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Cluster");
+                });
+
             modelBuilder.Entity("Data.Domain.Entities.Vehicle", b =>
                 {
                     b.Property<int>("Id")
@@ -73,11 +79,11 @@ namespace Data.Migrations
                         .HasAnnotation("SqlServer:IdentitySeed", 1)
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("LocationX")
-                        .HasColumnType("int");
+                    b.Property<double>("LocationX")
+                        .HasColumnType("float");
 
-                    b.Property<int>("LocationY")
-                        .HasColumnType("int");
+                    b.Property<double>("LocationY")
+                        .HasColumnType("float");
 
                     b.Property<string>("Plate")
                         .IsRequired()

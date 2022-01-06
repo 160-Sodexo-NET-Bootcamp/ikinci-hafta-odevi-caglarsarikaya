@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace Data.Domain.Configurations
 {
-    public class ClusterConfiguration : IEntityTypeConfiguration<Cluster>
+    public class ClusterConfiguration : IEntityTypeConfiguration<ContainerCluster>
     {
-        public void Configure(EntityTypeBuilder<Cluster> builder)
+        public void Configure(EntityTypeBuilder<ContainerCluster> builder)
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).UseIdentityColumn(1, 1);

@@ -9,14 +9,14 @@ using System.Threading.Tasks;
 
 namespace Data.Domain.Configurations
 {
-    public class ClusterConfiguration : IEntityTypeConfiguration<ContainerCluster>
+    public class ContainerClusterConfiguration : IEntityTypeConfiguration<ContainerCluster>
     {
         public void Configure(EntityTypeBuilder<ContainerCluster> builder)
         {
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).UseIdentityColumn(1, 1);
 
-            builder.ToTable("Cluster");
+            builder.ToTable("ContainerCluster");
         }
     }
 }

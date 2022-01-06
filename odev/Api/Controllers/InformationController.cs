@@ -24,8 +24,8 @@ namespace Api.Controllers
            return  _informationService.GetVehicleRoute(Id);
         }
 
-        [HttpGet("GetClusters")]
-        public List<ContainerCluster> GetClusters()
+        [HttpGet("CreateClusters")]
+        public List<ContainerCluster> CreateClusters()
         {
             return _informationService.CreateClusters();
         }

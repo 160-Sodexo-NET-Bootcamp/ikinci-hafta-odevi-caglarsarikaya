@@ -71,7 +71,9 @@ namespace Core.Concrete
 
         public T Update(T entity)
         {
+            _context.Attach(entity);
             _context.Entry(entity).State = EntityState.Modified;
+            _context.SaveChanges();
             return entity;
         }
 

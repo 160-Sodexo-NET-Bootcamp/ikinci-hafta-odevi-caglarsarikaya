@@ -16,7 +16,7 @@ namespace Data.Context
         {
             modelBuilder.ApplyConfiguration(new ContainerConfiguration());
             modelBuilder.ApplyConfiguration(new VehicleConfiguration());
-            modelBuilder.ApplyConfiguration(new ClusterConfiguration());
+            modelBuilder.ApplyConfiguration(new ContainerClusterConfiguration());
 
         }
 

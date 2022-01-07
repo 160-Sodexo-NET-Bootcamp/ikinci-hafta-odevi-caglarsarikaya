@@ -31,7 +31,7 @@ namespace Business.Concrete
             _uow = uow;
         }
 
-        public List<ContainerCluster> CreateClusters()
+        public List<ContainerCluster> CreateClusters(int clusterCount)
         {
             var containers = _containerRepository.GetAllAsync().Result;
             var clusterList = new List<ContainerCluster>();
@@ -39,7 +39,6 @@ namespace Business.Concrete
             {
                 clusterList.Add(new ContainerCluster { ContainerId = con.Id, LocationX = con.LocationX, LocationY = con.LocationY });
             }
-            var clusterCount = clusterList.Count() / 8 + 1;
 
             var kmeans = new KMeans();
             var res = kmeans.Cluster(clusterList, clusterCount);
@@ -59,7 +58,6 @@ namespace Business.Concrete
                 else
                 {
                     _containerClusterRepository.AddAsync(willRecord);
-
                 }
             }
             _uow.SaveChanges();

@@ -11,6 +11,6 @@ namespace Business.Abstract
     {
         Task<List<Container>> GetVehicleRoute(int id);
 
-        List<ContainerCluster> CreateClusters();
+        List<ContainerCluster> CreateClusters(int clusterCount);
     }
 }

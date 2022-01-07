@@ -21,13 +21,13 @@ namespace Api.Controllers
         [HttpGet("GetVehicleRoute")]
         public Task<List<Container>> GetVehicleRoute(int Id)
         {
-           return  _informationService.GetVehicleRoute(Id);
+            return _informationService.GetVehicleRoute(Id);
         }
 
-        [HttpGet("CreateClusters")]
-        public List<ContainerCluster> CreateClusters()
+        [HttpGet("CreateClusters/{clusterCount}")]
+        public List<ContainerCluster> CreateClusters(int clusterCount)
         {
-            return _informationService.CreateClusters();
+            return _informationService.CreateClusters(clusterCount);
         }
 
 
